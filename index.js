@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     message: 'Rota Principal'
   });
 });
-
+// rota reset.
 app.get('*',(req,res)=>{
   res.status(404).json({
     message: 'Rota não encontada',
