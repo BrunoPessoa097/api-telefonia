@@ -1,4 +1,6 @@
 import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
 // importando as variáveis do ambiente.
 import dotenv from 'dotenv';
 // importação de rotas.
@@ -8,7 +10,11 @@ import pessoaRoute from './src/routes/pessoaRoutes.js';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
+
+// mildwares.
 app.use(express.json());
+app.use(cors());
+app.use(helmet());
 
 // rotas.
 app.use(mongoRoute);
